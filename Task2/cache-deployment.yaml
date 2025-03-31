@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cache-deployment
+  namespace: redis  # We have specified redis cache here
+spec:
+  replicas: 2  # Number of replicas for cache service
+  selector:
+    matchLabels:
+      app: redis  # Pods with this label will be managed by this deployment
+  template:
+    metadata:
+      labels:
+        app: redis  # The pods will be labeled with this label
+    spec:
+      containers:
+        - name: redis
+          image: redis:latest # We have used Redis cache here
+          ports:
+            - containerPort: 6379  # Default port for Redis
