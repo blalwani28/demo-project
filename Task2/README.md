@@ -23,14 +23,18 @@ The next step is creating a NetworkPolicy that restricts traffic according to th
 **Step 4: Apply the configurations**
 Now that you have the YAML files for the deployments, service, and network policy, you can apply them to your Kubernetes cluster.
 
-- Apply the deployments
+- Apply the deployments:
+
 kubectl apply -f my-app-deployment.yaml
+
 kubectl apply -f cache-deployment.yaml
 
-- Apply the service
+- Apply the service:
+
 kubectl apply -f my-app-service.yaml
 
-- Apply the network policy
+- Apply the network policy:
+
 kubectl apply -f my-app-network-policy.yaml
 
 **Step 5: Verify the Deployment and Network Policy**
